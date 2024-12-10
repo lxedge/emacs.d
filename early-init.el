@@ -1,0 +1,13 @@
+;;
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Early-Init-File.html
+
+(defun open-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+
+(global-set-key (kbd "<f2>") 'open-init-file)
+
+(setq package-enable-at-startup nil)
+
+(setq initial-frame-alist
+      '((width . 150) (height . 40)))
