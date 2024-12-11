@@ -22,6 +22,11 @@
 
 ;; (add-hook 'M-mode-hook 'enable-paredit-mode)
 
+(straight-use-package 'exec-path-from-shell)
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (straight-use-package 'tree-sitter)
 (straight-use-package 'tree-sitter-langs)
 (straight-use-package 'treesit-auto)
