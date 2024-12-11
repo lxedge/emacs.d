@@ -23,3 +23,5 @@
 (require 'init-themes)
 (require 'init-mini)
 (require 'init-edit)
+(require 'init-elixir)
+(require 'init-nix)
