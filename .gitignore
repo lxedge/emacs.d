@@ -5,3 +5,5 @@ elpa
 language-server
 projects
 tree-sitter
+.cache
+.lsp-session*

@@ -8,6 +8,7 @@
 (add-hook 'company-mode-hook 'company-box-mode)
 
 (straight-use-package 'lsp-mode)
+(straight-use-package 'lsp-treemacs)
 (straight-use-package 'lsp-ui)
 
 (straight-use-package 'company-lsp)

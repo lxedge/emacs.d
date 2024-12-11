@@ -25,3 +25,4 @@
 (require 'init-edit)
 (require 'init-elixir)
 (require 'init-nix)
+(require 'init-clojure)
