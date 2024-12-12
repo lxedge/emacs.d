@@ -11,10 +11,6 @@
 (straight-use-package 'lsp-treemacs)
 (straight-use-package 'lsp-ui)
 
-(straight-use-package 'company-lsp)
-(require 'company-lsp)
-(push 'company-lsp company-backends)
-
 (straight-use-package 'paredit)
 (autoload 'enable-paredit-mode "paredit"
   "Turn on pseudo-structural editing of List code."
