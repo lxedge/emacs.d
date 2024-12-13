@@ -18,6 +18,10 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+(straight-use-package 'direnv)
+(require 'direnv)
+(direnv-mode)
+
 (straight-use-package 'ace-window)
 (require 'ace-window)
 (global-set-key (kbd "M-o") 'ace-window)
