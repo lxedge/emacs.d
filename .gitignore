@@ -1,3 +1,4 @@
+var
 url
 straight
 auto-save-list
@@ -7,3 +8,5 @@ projects
 tree-sitter
 .cache
 .lsp-session*
+tramp
+tutorial

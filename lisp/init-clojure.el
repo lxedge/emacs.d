@@ -1,16 +1,12 @@
 ;;
 
-(straight-use-package 'clojure-ts-mode)
-(require 'clojure-ts-mode)
+(straight-use-package 'clojure-mode)
+;; (require 'clojure-ts-mode)
 
 (straight-use-package 'cider)
-(require 'cider)
 
-(add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-ts-clojurescript-mode))
-(add-to-list 'auto-mode-alist '("\\.cljc\\'" . clojure-ts-clojurec-mode))
-
-(add-hook 'clojure-ts-mode-hook #'cider-mode)
+;; (add-hook 'clojure-mode-hook #'cider-mode)
+(add-hook 'clojure-mode-hook #'paredit-mode)
 
 (straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-ui)
@@ -20,10 +16,10 @@
 (require 'lsp-ui)
 (require 'company-lsp)
 
-(add-hook 'clojure-ts-mode-hook #'lsp-deferred)
-(add-hook 'cider-mode-hook #'eldoc-mode)
+(add-hook 'clojure-mode-hook #'lsp-deferred)
+(add-hook 'clojure-mode-hook #'eldoc-mode)
 
-(lsp-register-client
+'(lsp-register-client
  (make-lsp--client :new-connection (lsp-tramp-connection "clojure-lsp")
 		   :major-modes '(clojure-ts-mode
 				  clojure-ts-clojurescript-mode

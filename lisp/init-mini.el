@@ -3,18 +3,7 @@
 ;; Using icomplete-vertical-mode instead.
 ;; (straight-use-package 'vertico)
 ;; (vertico-mode)
-(setq completion-auto-help nil)
-
-(icomplete-mode t)
-(straight-use-package 'icomplete-vertical)
-(icomplete-vertical-mode t)
-
-(straight-use-package 'orderless)
-(require 'orderless)
-(setq completion-styles '(orderless basic)
-      completion-category-overrides '((file (style basic partial-completion)))
-      read-file-name-completion-ignore-case t
-      read-buffer-completion-ignore-case t)
+;; (setq completion-auto-help nil)
 
 (straight-use-package 'marginalia)
 (marginalia-mode t)
@@ -22,6 +11,17 @@
 ;; (straight-use-package 'consult)
 ;; (straight-use-package 'embark)
 ;; (straight-use-package 'embark-consult)
+
+(straight-use-package '(vertico :files (:defaults "extensions/*")))
+(straight-use-package 'prescient)
+(straight-use-package 'vertico-prescient)
+
+(require 'vertico)
+(require 'vertico-prescient)
+
+(vertico-mode 1)
+(vertico-prescient-mode 1)
+(prescient-persist-mode 1)
 
 
 (provide 'init-mini)
