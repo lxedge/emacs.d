@@ -10,3 +10,5 @@ tree-sitter
 .lsp-session*
 tramp
 tutorial
+transient
+

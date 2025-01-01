@@ -28,3 +28,4 @@
 (require 'init-nix)
 (require 'init-clojure)
 (require 'init-rust)
+(require 'init-llm)

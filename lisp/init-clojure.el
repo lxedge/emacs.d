@@ -28,5 +28,10 @@
 
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
+(setq clojure-toplevel-inside-comment-form t
+      clojure-indent-style 'always-indent
+      clojure-indent-keyword-style 'always-indent
+      clojure-enable-indent-specs nil)
+
 
 (provide 'init-clojure)
