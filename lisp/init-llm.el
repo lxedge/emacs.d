@@ -1,4 +1,5 @@
-;;
+;;; -*- lexical-binding: t; -*-
+
 (straight-use-package 'gptel)
 
 (setq gptel-model   'deepseek-chat

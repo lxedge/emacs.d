@@ -24,8 +24,10 @@
 (require 'init-mini)
 (require 'init-edit)
 (require 'init-lsp)
-(require 'init-elixir)
 (require 'init-nix)
+(require 'init-llm)
+
+(require 'init-elixir)
 (require 'init-clojure)
 (require 'init-rust)
-(require 'init-llm)
+(require 'init-proto)

@@ -1,4 +1,4 @@
-;;;
+;;; -*- lexical-binding: t; -*-
 
 (straight-use-package '(cargo :host github
                               :repo "DogLooksGood/cargo.el"))
