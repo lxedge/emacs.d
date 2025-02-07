@@ -1,4 +1,6 @@
+;;; -*- lexical-binding: t; -*-
 ;;
+
 (straight-use-package 'company)
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;
 
 (setq visible-bell 1)
@@ -11,7 +12,7 @@
 (set-scroll-bar-mode nil)
 
 (global-display-line-numbers-mode 1)
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
 
 (delete-selection-mode 1)

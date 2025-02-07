@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;
 
 ;; Using icomplete-vertical-mode instead.
