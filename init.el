@@ -32,3 +32,4 @@
 (require 'init-clojure)
 (require 'init-rust)
 (require 'init-proto)
+(require 'init-gitlab-ci)
