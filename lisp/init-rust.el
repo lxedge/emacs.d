@@ -12,10 +12,15 @@
 (straight-use-package 'rust-mode)
 (straight-use-package 'rust-ts-mode)
 
+
+
 (add-hook 'rust-ts-mode-hook
           (lambda ()
             (require 'rust-mode)
-            (require 'rust-compile)))
+            (require 'rust-compile)
+	    (require 'lsp-mode)
+	    (require 'lsp-ui)
+	    (require 'company-lsp)))
 
 (add-to-list 'auto-mode-alist (cons "\\.rs\\'" 'rust-ts-mode))
 
