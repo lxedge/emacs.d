@@ -30,5 +30,11 @@
 ;; (straight-use-package 'which-key)
 ;; (require 'which-key)
 
+(straight-use-package 'highlight-symbol)
+(global-set-key (kbd "M-i") 'highlight-symbol)
+(global-set-key (kbd "M-n") 'highlight-symbol-next)
+(global-set-key (kbd "M-p") 'highlight-symbol-prev)
+;; (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
 
 (provide 'init-edit)
