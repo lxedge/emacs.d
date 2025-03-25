@@ -28,6 +28,7 @@
 (require 'init-nix)
 (require 'init-llm)
 
+(require 'init-json)
 (require 'init-elixir)
 (require 'init-clojure)
 (require 'init-rust)
