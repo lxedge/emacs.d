@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;
+;;; Code:
 
 (straight-use-package 'company)
 (require 'company)
@@ -38,3 +38,5 @@
 
 
 (provide 'init-edit)
+
+;;; init-edit.el ends here

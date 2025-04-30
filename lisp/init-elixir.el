@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;
+;;; Code:
 
 ;; (straight-use-package 'elixir-mode)
 (straight-use-package 'elixir-ts-mode)
@@ -22,3 +22,5 @@
 
 
 (provide 'init-elixir)
+
+;;; init-elixir.el ends here

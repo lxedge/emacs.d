@@ -1,4 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
+;;; Code:
 
 (straight-use-package 'gptel)
 
@@ -11,5 +12,7 @@
         :key (shell-command-to-string "echo $AI_DEEPSEEK_API_KEY")
         :models '(deepseek-chat deepseek-coder)))
 
-
 (provide 'init-llm)
+
+
+;;; init-llm.el ends here

@@ -1,4 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
+;;; Code:
 
 (straight-use-package 'protobuf-mode)
 
@@ -8,5 +9,6 @@
 
 (add-hook 'protobuf-mode-hook (lambda () (c-add-style "my-style" my-protobuf-style t)))
 
-
 (provide 'init-proto)
+
+;;; init-proto.el ends here

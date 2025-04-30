@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;
+;;; Code:
 
 (straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-treemacs)
@@ -24,5 +24,6 @@
 (setq treesit-auto-install t)
 (treesit-auto-install-all)
 
-
 (provide 'init-lsp)
+
+;;; init-lsp.el ends here

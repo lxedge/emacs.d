@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;
+;;; Code:
 
 (straight-use-package 'clojure-mode)
 ;; (require 'clojure-ts-mode)
@@ -36,3 +36,5 @@
 
 
 (provide 'init-clojure)
+
+;;; init-clojure.el ends here

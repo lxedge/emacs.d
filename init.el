@@ -1,5 +1,6 @@
-;;; -*- lexical-binding: t; -*-
-;;
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -20,6 +21,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+
 (require 'init-defaults)
 (require 'init-themes)
 (require 'init-mini)
@@ -33,3 +35,5 @@
 (require 'init-rust)
 (require 'init-proto)
 (require 'init-gitlab-ci)
+
+;;; init.el ends here

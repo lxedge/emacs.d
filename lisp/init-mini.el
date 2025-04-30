@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;
+;;; Code:
 
 ;; Using icomplete-vertical-mode instead.
 ;; (straight-use-package 'vertico)
@@ -24,5 +24,6 @@
 (vertico-prescient-mode 1)
 (prescient-persist-mode 1)
 
-
 (provide 'init-mini)
+
+;;; init-mini.el ends here
