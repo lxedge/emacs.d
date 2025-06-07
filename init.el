@@ -12,8 +12,8 @@
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
-	 "https://radian-software.github.io/straight.el/install.el"
-         ;; "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	 ;; "https://radian-software.github.io/straight.el/install.el"
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
@@ -26,14 +26,16 @@
 (require 'init-themes)
 (require 'init-mini)
 (require 'init-edit)
-(require 'init-lsp)
+
 (require 'init-nix)
 (require 'init-llm)
 
+(require 'init-lsp)
 (require 'init-elixir)
 (require 'init-clojure)
 (require 'init-rust)
-(require 'init-proto)
-(require 'init-gitlab-ci)
+(require 'init-go)
+;; (require 'init-proto)
+;; (require 'init-gitlab-ci)
 
 ;;; init.el ends here

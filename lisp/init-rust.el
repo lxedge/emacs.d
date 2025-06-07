@@ -12,8 +12,6 @@
 (straight-use-package 'rust-mode)
 (straight-use-package 'rust-ts-mode)
 
-
-
 (add-hook 'rust-ts-mode-hook
           (lambda ()
             (require 'rust-mode)
@@ -22,11 +20,15 @@
 	    (require 'lsp-ui)
 	    (require 'company-lsp)))
 
+(add-hook 'rust-ts-mode #'lsp-deferred)
+;; (add-hook 'before-save-hook #'lsp-format-buffer)
+
 (add-to-list 'auto-mode-alist (cons "\\.rs\\'" 'rust-ts-mode))
 
 (setq lsp-rust-analyzer-completion-add-call-parenthesis nil
       lsp-rust-analyzer-proc-macro-enable t
-      lsp-rust-analyzer-server-format-inlay-hints nil)
+      lsp-rust-analyzer-server-format-inlay-hints nil
+      lsp-rust-analyzer-standalone-file-support t)
 
 
 (provide 'init-rust)
