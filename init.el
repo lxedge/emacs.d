@@ -36,9 +36,11 @@
 (require 'init-eglot)
 (require 'init-rust)
 ;; (require 'init-go)
-(require 'init-typescript)
 (require 'init-clojure)
 (require 'init-elixir)
+(require 'init-typescript)
+(require 'init-web)
+
 ;; (require 'init-temp)
 ;; (require 'init-proto)
 ;; (require 'init-gitlab-ci)
