@@ -2,32 +2,43 @@
 ;;; Code:
 
 (straight-use-package 'clojure-mode)
-;; (require 'clojure-ts-mode)
-
 (straight-use-package 'cider)
+(straight-use-package 'paredit)
 
-;; (add-hook 'clojure-mode-hook #'cider-mode)
-(add-hook 'clojure-mode-hook #'paredit-mode)
+(require 'eglot)
+(require 'company)
+(add-to-list 'eglot-server-programs '(clojure-mode . ("clojure-lsp")))
 
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'company-lsp)
+(add-hook 'clojurescript-mode-hook #'eglot-ensure)
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (paredit-mode)
+            (subword-mode)
+            (eglot-ensure)
+            (eldoc-mode)
+            (company-mode)))
 
-(require 'lsp-mode)
-(require 'lsp-ui)
-(require 'company-lsp)
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-workspace-configuration
+               '(:clojure-lsp . (:lint-as (clj-kondo/clojure-lsp
+                                          clj-kondo/clojurescript
+                                          clj-kondo/clojurec)))))
 
-(add-hook 'clojure-mode-hook #'lsp-deferred)
-(add-hook 'clojure-mode-hook #'eldoc-mode)
+(setq eglot-extend-to-xref t)
+(setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
 
-;; (lsp-register-client
-;;  (make-lsp--client :new-connection (lsp-tramp-connection "clojure-lsp")
-;; 		   :major-modes '(clojure-ts-mode
-;; 				  clojure-ts-clojurescript-mode
-;; 				  clojure-ts-clojurec-mode)
-;; 		   :server-id 'clojure-ls))
+;; (straight-use-package 'lsp-mode)
+;; (straight-use-package 'lsp-ui)
+;; (straight-use-package 'company-lsp)
 
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+;; (require 'lsp-mode)
+;; (require 'lsp-ui)
+;; (require 'company-lsp)
+
+;; (add-hook 'clojure-mode-hook #'lsp-deferred)
+;; (add-hook 'clojure-mode-hook #'eldoc-mode)
+
+;; (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
 (setq clojure-toplevel-inside-comment-form t
       clojure-indent-style 'always-indent
