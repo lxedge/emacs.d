@@ -17,7 +17,7 @@
 ;; (load-theme 'doom-rouge t)
 (load-theme 'vscode-dark-plus t)
 
-;; (straight-use-package 'all-the-icons)
+(straight-use-package 'all-the-icons)
 ;; (straight-use-package 'treemacs)
 ;; (straight-use-package 'treemacs-all-the-icons)
 ;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)

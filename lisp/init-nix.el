@@ -1,9 +1,10 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
-(straight-use-package 'nix-ts-mode)
-(require 'nix-ts-mode)
-(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-ts-mode))
+(straight-use-package 'nix-mode)
+
+(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
+
 
 (provide 'init-nix)
 

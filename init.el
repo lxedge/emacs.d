@@ -29,11 +29,12 @@
 (require 'init-themes)
 (require 'init-mini)
 (require 'init-edit)
+(require 'init-vcs)
 
+(require 'init-eglot)
 (require 'init-nix)
 (require 'init-llm)
 
-(require 'init-eglot)
 (require 'init-rust)
 ;; (require 'init-go)
 (require 'init-clojure)
