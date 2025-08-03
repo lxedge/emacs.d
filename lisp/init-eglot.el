@@ -24,12 +24,13 @@
 (straight-use-package 'company-box)
 (add-hook 'company-mode-hook 'company-box-mode)
 
-(setq company-tooltip-align-annotations t
-      company-box-icons-alist 'company-box-icons-all-the-icons
-      company-tooltip-flip-when-above t
-      company-frontends
-      '(company-pseudo-tooltip-frontend
-        company-echo-metadata-frontend))
+;; (setq company-tooltip-align-annotations t
+;;       company-box-icons-alist 'company-box-icons-all-the-icons
+;;       company-tooltip-flip-when-above t
+;;       ;; company-frontends
+;;       ;; '(company-pseudo-tooltip-frontend
+;;       ;;   company-echo-metadata-frontend)
+;; )
 
 ;; lsp section
 (straight-use-package 'eglot)

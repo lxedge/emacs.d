@@ -36,6 +36,7 @@
 (require 'init-llm)
 
 (require 'init-rust)
+(require 'init-cpp)
 ;; (require 'init-go)
 (require 'init-clojure)
 (require 'init-elixir)
