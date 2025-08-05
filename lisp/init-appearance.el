@@ -17,12 +17,19 @@
 ;; (load-theme 'doom-rouge t)
 (load-theme 'vscode-dark-plus t)
 
-(straight-use-package 'all-the-icons)
 ;; (straight-use-package 'treemacs)
 ;; (straight-use-package 'treemacs-all-the-icons)
 ;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 ;; (treeamcs-load-theme "all-the-icons")
 
-(provide 'init-themes)
+(straight-use-package 'dired-sidebar)
+(straight-use-package 'nerd-icons)
+(straight-use-package 'nerd-icons-dired)
+(setq dired-sidebar-theme 'nerd-icons)
+(setq dired-sidebar-use-term-integration t)
+(setq dired-sidebar-use-custom-font t)
+
+
+(provide 'init-appearance)
 
 ;;; init-themes.el ends here
