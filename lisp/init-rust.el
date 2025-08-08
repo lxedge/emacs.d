@@ -13,11 +13,11 @@
 (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
 (add-hook 'rust-mode-hook
           (lambda ()
+            (prettify-symbols-mode)
             (eglot-ensure)
             (cargo-minor-mode)
             (flycheck-mode)
             (setq indent-tabs-mode nil)
-            (local-set-key (kbd "C-c C-c") 'rust-run)
             (tree-sitter-hl-mode)))
 
 (with-eval-after-load 'rust-mode-hook

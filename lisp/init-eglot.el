@@ -5,10 +5,11 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 (setq company-minimum-prefix-length 2
-      company-idle-delay 0.5
+      company-idle-delay 0.3
       company-selection-wrap-around t
       company-tooltip-limit 10
-      company-show-quick-access 'left)
+      company-show-quick-access 'left
+      company-async-timeout 0.5)
 
 (add-hook 'prog-mode-hook
           (lambda ()

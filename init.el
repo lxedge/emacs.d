@@ -28,7 +28,7 @@
 (require 'init-defaults)
 (require 'init-appearance)
 (require 'init-mini)
-(require 'init-bedit)
+;; (require 'init-bedit)
 (require 'init-edit)
 
 (require 'init-vcs)
