@@ -1,6 +1,9 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
+(global-hl-line-mode t)
+(setq-default cursor-type 'bar)
+
 ;; themes
 (straight-use-package 'monokai-theme)
 (straight-use-package 'zenburn-theme)
