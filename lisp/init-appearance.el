@@ -1,8 +1,14 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
-(global-hl-line-mode t)
 (setq-default cursor-type 'bar)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(set-scroll-bar-mode nil)
+
+(global-display-line-numbers-mode 1)
+(global-hl-line-mode 1)
+(global-auto-revert-mode 1)
 
 ;; themes
 (straight-use-package 'monokai-theme)
