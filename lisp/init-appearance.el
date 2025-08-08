@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
+;; themes
 (straight-use-package 'monokai-theme)
 (straight-use-package 'zenburn-theme)
 (straight-use-package 'solarized-theme)
@@ -22,6 +23,7 @@
 ;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 ;; (treeamcs-load-theme "all-the-icons")
 
+;; sidebar
 (straight-use-package 'dired-sidebar)
 (straight-use-package 'nerd-icons)
 (straight-use-package 'nerd-icons-dired)
@@ -29,6 +31,9 @@
 (setq dired-sidebar-use-term-integration t)
 (setq dired-sidebar-use-custom-font t)
 
+;; breadcrumb
+(straight-use-package 'breadcrumb)
+(add-hook 'after-init-hook #'breadcrumb-mode)
 
 (provide 'init-appearance)
 
