@@ -13,3 +13,6 @@ tutorial
 transient
 eln-cache/
 eshell/
+
+# Ignore company files
+*/kc*

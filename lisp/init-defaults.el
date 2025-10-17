@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
-(setq visible-bell 1)
+(setq visible-bell nil)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq inhibit-startup-screen t)

@@ -39,7 +39,7 @@
 
 (require 'init-rust)
 (require 'init-cpp)
-;; (require 'init-go)
+(require 'init-golang)
 (require 'init-clojure)
 (require 'init-elixir)
 (require 'init-typescript)
