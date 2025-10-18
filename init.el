@@ -40,6 +40,7 @@
 (require 'init-rust)
 (require 'init-cpp)
 (require 'init-golang)
+(require 'init-protobuf)
 (require 'init-clojure)
 (require 'init-elixir)
 (require 'init-typescript)
