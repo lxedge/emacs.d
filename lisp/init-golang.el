@@ -6,7 +6,7 @@
 ;;; Code:
 
 (straight-use-package 'go-mode)
-;; (straight-use-package 'go-eldoc)
+(straight-use-package 'go-eldoc)
 (straight-use-package 'eglot)
 (straight-use-package 'company)
 
@@ -37,10 +37,10 @@
                    (concat "cd " (go-project-root) " && go build -v"))))
 
   ;; Enable go-eldoc
-  ;; (add-hook 'go-mode-hook 'go-eldoc-setup)
-  ;; (set-face-attribute 'eldoc-highlight-function-argument nil
-  ;;                     :underline t :foreground "green"
-  ;;                     :weight 'bold)
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
+  (set-face-attribute 'eldoc-highlight-function-argument nil
+                      :underline t :foreground "green"
+                      :weight 'bold)
 
   ;; Enable eglot in go-mode
   (add-hook 'go-mode-hook 'eglot-ensure)
