@@ -35,7 +35,9 @@
 
 (require 'init-eglot)
 (require 'init-nix)
+(require 'init-yaml)
 (require 'init-just)
+
 (require 'init-llm)
 
 (require 'init-rust)
@@ -48,7 +50,6 @@
 (require 'init-web)
 
 ;; (require 'init-temp)
-;; (require 'init-proto)
 ;; (require 'init-gitlab-ci)
 
 ;;; init.el ends here
