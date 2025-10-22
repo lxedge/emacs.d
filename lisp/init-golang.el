@@ -17,12 +17,18 @@
     (setenv "GOPATH" (string-trim output))
     (setq exec-path (cons (concat (string-trim output) "/bin") exec-path))))
 
-(defun go-project-root ()
+(defun find-go-project-root ()
   "Find the project root by looking for go.mod file."
   (let ((root (locate-dominating-file default-directory "go.mod")))
     (if root
         (expand-file-name root)
       default-directory)))
+
+(defun set-company-for-go ()
+  "set case insensitive completion for go mode"
+  (setq-local company-dabbrev-ignore-case t)
+  (setq-local company-dabbrev-downcase nil)
+  (setq-local company-transformers '(company-sort-by-backend-importance)))
 
 ;; Configure go-mode
 (with-eval-after-load 'go-mode
@@ -34,7 +40,8 @@
   (add-hook 'go-mode-hook
             (lambda ()
               (set (make-local-variable 'compile-command)
-                   (concat "cd " (go-project-root) " && go build -v"))))
+                   (concat "cd " (find-go-project-root) " && go build -v"))
+              (set-company-for-go)))
 
   ;; Enable go-eldoc
   (add-hook 'go-mode-hook 'go-eldoc-setup)
@@ -72,6 +79,8 @@
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1
         company-tooltip-align-annotations t))
+
+
 
 (provide 'init-golang)
 

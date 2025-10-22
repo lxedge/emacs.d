@@ -35,6 +35,7 @@
 
 (require 'init-eglot)
 (require 'init-nix)
+(require 'init-just)
 (require 'init-llm)
 
 (require 'init-rust)

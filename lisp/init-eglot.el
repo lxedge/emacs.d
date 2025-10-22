@@ -9,7 +9,10 @@
       company-selection-wrap-around t
       company-tooltip-limit 10
       company-show-quick-access 'left
-      company-async-timeout 0.5)
+      company-tooltip-align-annotations t
+      completion-ignore-case t
+      company-async-timeout 0.5
+      company-require-match nil)
 
 (add-hook 'prog-mode-hook
           (lambda ()
