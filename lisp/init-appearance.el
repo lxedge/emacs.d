@@ -6,6 +6,9 @@
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(setq frame-resize-pixelwise t)
+
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
