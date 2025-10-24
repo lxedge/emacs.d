@@ -41,7 +41,8 @@
             (lambda ()
               (set (make-local-variable 'compile-command)
                    (concat "cd " (find-go-project-root) " && go build -v"))
-              (set-company-for-go)))
+              (set-company-for-go)
+              (setq tab-width 4)))
 
   ;; Enable go-eldoc
   (add-hook 'go-mode-hook 'go-eldoc-setup)
