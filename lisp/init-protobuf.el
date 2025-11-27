@@ -62,15 +62,15 @@
   (add-to-list 'flycheck-checkers 'protobuf-protoc))
 
 ;; Optional: clang-format for formatting
-(straight-use-package 'clang-format)
+;; (straight-use-package 'clang-format)
 
 ;; Auto-format on save (requires clang-format binary)
-(when (executable-find "clang-format")
-  (add-hook 'protobuf-mode-hook
-            (lambda ()
-              (add-hook 'before-save-hook 'clang-format-buffer nil 'local))))
+;; (when (executable-find "clang-format")
+;;   (add-hook 'protobuf-mode-hook
+;;             (lambda ()
+;;               (add-hook 'before-save-hook 'clang-format-buffer nil 'local))))
 
-(setq clang-format-style "google")
+;; (setq clang-format-style "google")
 
 ;; Keybindings
 (with-eval-after-load 'protobuf-mode

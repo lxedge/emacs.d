@@ -1,16 +1,13 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
-(setq-default cursor-type 'bar)
+(setq-default cursor-type 'box)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(setq frame-resize-pixelwise t)
-
 (global-display-line-numbers-mode 1)
-(global-hl-line-mode 1)
+(global-hl-line-mode -1)
 (global-auto-revert-mode 1)
 
 ;; themes
@@ -21,14 +18,16 @@
 (straight-use-package 'material-theme)
 (straight-use-package 'doom-themes)
 (straight-use-package 'vscode-dark-plus-theme)
+(straight-use-package 'timu-caribbean-theme)
 
-(load-theme 'monokai 1)
+;; (load-theme 'monokai 1)
 ;; (load-theme 'zenburn 1)
 ;; (load-theme 'solarized-dark 1)
 ;; (load-theme 'monochrome 1)
 ;; (load-theme 'material t)
 ;; (load-theme 'doom-rouge t)
-;; (load-theme 'vscode-dark-plus t)
+(load-theme 'vscode-dark-plus t)
+;; (load-theme 'timu-caribbean t)
 
 ;; (straight-use-package 'treemacs)
 ;; (straight-use-package 'treemacs-all-the-icons)

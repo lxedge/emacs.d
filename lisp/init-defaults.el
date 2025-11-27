@@ -9,6 +9,12 @@
 (delete-selection-mode 1)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(setq frame-resize-pixelwise t)
+
+(set-face-attribute 'default nil :family "Fira Code" :height 140)
+(add-to-list 'default-frame-alist '(font . "Fira Code-14"))
+
 (provide 'init-defaults)
 
 ;;; init-defaults.el ends here

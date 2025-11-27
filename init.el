@@ -37,6 +37,7 @@
 (require 'init-nix)
 (require 'init-yaml)
 (require 'init-just)
+;; (require 'init-kdl)
 
 (require 'init-llm)
 
