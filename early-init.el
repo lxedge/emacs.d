@@ -13,3 +13,6 @@
       '((width . 150) (height . 40)))
 
 (setq gc-cons-threshold (* 50 1024 1024))
+
+(global-set-key (kbd "<C-wheel-up>") 'ignore)
+(global-set-key (kbd "<C-wheel-down>") 'ignore)
