@@ -12,8 +12,22 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq frame-resize-pixelwise t)
 
-(set-face-attribute 'default nil :family "Fira Code" :height 140)
-(add-to-list 'default-frame-alist '(font . "Fira Code-14"))
+(set-face-attribute 'default nil :family "Fira Code" :height 145)
+(add-to-list 'default-frame-alist '(font . "Fira Code 14"))
+
+(if (fboundp 'mac-auto-operator-composition-mode)
+    (mac-auto-operator-composition-mode))
+
+;; (set-frame-font "Fira Code 12" 'force-family)
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-eval-after-load 'emacs-mac-port
+              (select-frame frame)
+              (mac-auto-operator-composition-mode 1))))
+
+(setq-default line-spacing 0.15)
+
+
 
 (provide 'init-defaults)
 
