@@ -53,6 +53,8 @@
 ;; (require 'init-temp)
 ;; (require 'init-gitlab-ci)
 
+(require 'init-telega)
+
 ;;; init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
