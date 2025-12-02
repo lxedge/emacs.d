@@ -42,11 +42,18 @@
 (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 (setq all-the-icons-dired-monochrome nil)
 
-;; sidebar
+;; sidebar-left
 (straight-use-package 'dired-sidebar)
 (setq dired-sidebar-theme 'nerd-icons)
 (setq dired-sidebar-use-term-integration t)
 (setq dired-sidebar-use-custom-font t)
+
+;; sidebar-right
+(straight-use-package 'imenu-list)
+(require 'imenu-list)
+(setq imenu-list-focus-after-activation t)
+(setq imenu-list-auto-resize t)
+(global-set-key (kbd "C-'") #'imenu-list-smart-toggle)
 
 ;; breadcrumb
 (straight-use-package 'breadcrumb)
