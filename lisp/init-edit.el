@@ -30,18 +30,44 @@
 ;; (add-hook 'prog-mode-hook 'fira-code-mode)
 ;; (global-fira-code-mode)
 
-(set-face-attribute 'default nil :family "Fira Code" :height 130)
-(add-to-list 'default-frame-alist '(font . "Fira Code 10"))
+(set-face-attribute 'default nil :family "Fira Code")
+(add-to-list 'default-frame-alist '(font . "Fira Code"))
 
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode))
 
-(set-frame-font "Fira Code 10" 'force-family)
+(set-frame-font "Fira Code" 'force-family)
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (with-eval-after-load 'emacs-mac-port
               (select-frame frame)
               (mac-auto-operator-composition-mode 1))))
+
+(defun my/font-size-from-resolution ()
+  "Return font size based on current monitor resolution."
+  (let* ((geom (frame-monitor-attribute 'geometry))
+         (width (nth 2 geom)))
+    (cond
+     ;; 4K and above
+     ((>= width 3840) 180)
+     ;; 2K / 1440p
+     ((>= width 2560) 150)
+     ;; mac 1800
+     ((>= width 1800) 140)
+     ;; 1080p or smaller
+     (t 130))))
+
+(defun my/apply-font-size (&optional frame)
+  "Apply font size for FRAME based on monitor resolution."
+  (with-selected-frame (or frame (selected-frame))
+    (set-face-attribute 'default nil :height (my/font-size-from-resolution))))
+
+;; Run at startup
+(my/apply-font-size)
+
+;; Run whenever a new frame is created (GUI, daemon, etc.)
+(add-hook 'after-make-frame-functions #'my/apply-font-size)
+
 
 (provide 'init-edit)
 
