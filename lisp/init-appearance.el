@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
-(setq-default cursor-type 'box)
+;; (setq-default cursor-type 'box)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
@@ -26,8 +26,8 @@
 ;; (load-theme 'monochrome 1)
 ;; (load-theme 'material t)
 ;; (load-theme 'doom-rouge t)
-(load-theme 'vscode-dark-plus t)
-;; (load-theme 'timu-caribbean t)
+;; (load-theme 'vscode-dark-plus t)
+(load-theme 'timu-caribbean t)
 
 ;; (straight-use-package 'treemacs)
 ;; (straight-use-package 'treemacs-all-the-icons)

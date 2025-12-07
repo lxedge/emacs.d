@@ -25,7 +25,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(require 'init-defaults)
 (require 'init-appearance)
 (require 'init-mini)
 ;; (require 'init-bedit)

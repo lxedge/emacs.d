@@ -26,6 +26,22 @@
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
 ;; (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
+;; (straight-use-package 'fira-code-mode)
+;; (add-hook 'prog-mode-hook 'fira-code-mode)
+;; (global-fira-code-mode)
+
+(set-face-attribute 'default nil :family "Fira Code" :height 130)
+(add-to-list 'default-frame-alist '(font . "Fira Code 10"))
+
+(if (fboundp 'mac-auto-operator-composition-mode)
+    (mac-auto-operator-composition-mode))
+
+(set-frame-font "Fira Code 10" 'force-family)
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-eval-after-load 'emacs-mac-port
+              (select-frame frame)
+              (mac-auto-operator-composition-mode 1))))
 
 (provide 'init-edit)
 
