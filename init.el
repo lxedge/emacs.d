@@ -38,8 +38,10 @@
 (require 'init-just)
 ;; (require 'init-kdl)
 
-(require 'init-llm)
+;; (require 'init-llm)
+(require 'init-copilot)
 
+(require 'init-lua)
 (require 'init-rust)
 (require 'init-cpp)
 (require 'init-golang)
