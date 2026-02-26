@@ -26,60 +26,12 @@
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
 ;; (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
-;; (straight-use-package 'fira-code-mode)
-;; (add-hook 'prog-mode-hook 'fira-code-mode)
-;; (global-fira-code-mode)
+;; set meta key on mac
+(when (eq system-type 'darwin)
+  (setq ns-command-modifier 'meta)
+  (setq ns-option-modifier 'none))
 
-(add-to-list 'default-frame-alist '(font . "Maple Mono NF CN"))
 
-(set-face-attribute 'default nil
-                    :family "Maple Mono NF CN"
-                    :height 145
-                    :weight 'regular)
-
-(set-face-attribute 'font-lock-comment-face nil
-                    :family "Maple Mono NF CN"
-                    :slant 'italic)
-
-(set-face-attribute 'font-lock-string-face nil
-                    :family "Maple Mono NF CN"
-                    :slant 'italic)
-
-(set-face-attribute 'font-lock-keyword-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'regular
-                    :slant 'italic)
-
-(set-face-attribute 'font-lock-function-name-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'regular
-                    :slant 'italic)
-
-(set-face-attribute 'font-lock-function-call-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'regular
-                    :slant 'italic)
-
-(set-face-attribute 'font-lock-type-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'bold
-                    :slant 'normal)
-
-(set-face-attribute 'font-lock-constant-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'regular
-                    :slant 'normal)
-
-(set-face-attribute 'font-lock-variable-name-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'regular
-                    :slant 'normal)
-
-(set-face-attribute 'font-lock-builtin-face nil
-                    :family "Maple Mono NF CN"
-                    :weight 'regular
-                    :slant 'normal
-                    :foreground "#569CD6")
 
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode))
@@ -89,32 +41,6 @@
             (with-eval-after-load 'emacs-mac-port
               (select-frame frame)
               (mac-auto-operator-composition-mode 1))))
-
-;; (defun my/font-size-from-resolution ()
-;;   "Return font size based on current monitor resolution."
-;;   (let* ((geom (frame-monitor-attribute 'geometry))
-;;          (width (nth 2 geom)))
-;;     (cond
-;;      ;; 4K and above
-;;      ((>= width 3840) 180)
-;;      ;; 2K / 1440p
-;;      ((>= width 2560) 140)
-;;      ;; mac 1800
-;;      ((>= width 1800) 130)
-;;      ;; 1080p or smaller
-;;      (t 120))))
-
-;; (defun my/apply-font-size (&optional frame)
-;;   "Apply font size for FRAME based on monitor resolution."
-;;   (with-selected-frame (or frame (selected-frame))
-;;     (set-face-attribute 'default nil :height (my/font-size-from-resolution))))
-
-;; ;; Run at startup
-;; (my/apply-font-size)
-
-;; ;; Run whenever a new frame is created (GUI, daemon, etc.)
-;; (add-hook 'after-make-frame-functions #'my/apply-font-size)
-
 
 (provide 'init-edit)
 

@@ -25,3 +25,12 @@
 (setq frame-resize-pixelwise t)
 
 (setq-default line-spacing 0.15)
+
+;; (setq-default cursor-type 'box)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(set-scroll-bar-mode nil)
+
+(global-display-line-numbers-mode 1)
+(global-hl-line-mode -1)
+(global-auto-revert-mode 1)
