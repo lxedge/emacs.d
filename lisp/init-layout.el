@@ -25,6 +25,11 @@
 (vertico-prescient-mode 1)
 (prescient-persist-mode 1)
 
+;; install all-the-icons
+(straight-use-package 'all-the-icons)
+(unless (member "all-the-icons" (font-family-list))
+  (all-the-icons-install-fonts t))
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; sidebar-left ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (straight-use-package 'dired-sidebar)
 (setq dired-sidebar-theme 'nerd-icons)

@@ -34,3 +34,7 @@
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode -1)
 (global-auto-revert-mode 1)
+
+;; disable warning from external packages.
+(setq byte-compile-warnings
+      '(not free-vars unresolved callargs obsolete))
