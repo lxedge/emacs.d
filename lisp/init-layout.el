@@ -2,6 +2,10 @@
 ;;; Code:
 
 (winner-mode 1)
+(global-set-key (kbd "M-[") #'shrink-window-horizontally)
+(global-set-key (kbd "M-]") #'enlarge-window-horizontally)
+(global-set-key (kbd "M--") #'shrink-window)
+(global-set-key (kbd "M-=") #'enlarge-window)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; minibar ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Using icomplete-vertical-mode instead.
