@@ -16,3 +16,4 @@ eshell/
 
 # Ignore company files
 */kc*
+.aider*

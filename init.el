@@ -25,7 +25,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
- (require 'init-layout)
+(require 'init-layout)
+(require 'init-terminal)
 (require 'init-theme)
 (require 'init-edit)
 ;; (require 'init-bedit)
@@ -36,11 +37,9 @@
 (require 'init-yaml)
 (require 'init-just)
 ;; (require 'init-kdl)
-
 ;; (require 'init-llm)
 ;; (require 'init-copilot)
 
-(require 'init-lua)
 (require 'init-rust)
 (require 'init-cpp)
 (require 'init-golang)
@@ -49,6 +48,8 @@
 (require 'init-elixir)
 (require 'init-typescript)
 (require 'init-web)
+;; (require 'init-solidity)
+;; (require 'init-lua)
 
 ;; (require 'init-temp)
 ;; (require 'init-gitlab-ci)

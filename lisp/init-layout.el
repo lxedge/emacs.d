@@ -1,6 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Code:
 
+(winner-mode 1)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; minibar ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Using icomplete-vertical-mode instead.
 ;; (straight-use-package 'vertico)
