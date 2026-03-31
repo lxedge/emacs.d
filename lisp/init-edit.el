@@ -31,8 +31,6 @@
   (setq ns-command-modifier 'meta)
   (setq ns-option-modifier 'none))
 
-
-
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode))
 

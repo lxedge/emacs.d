@@ -28,6 +28,7 @@
 (require 'init-layout)
 (require 'init-terminal)
 (require 'init-theme)
+(require 'init-company)
 (require 'init-edit)
 ;; (require 'init-bedit)
 (require 'init-vcs)
