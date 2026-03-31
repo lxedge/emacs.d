@@ -28,7 +28,8 @@
 (require 'init-layout)
 (require 'init-terminal)
 (require 'init-theme)
-(require 'init-corfu)
+(require 'init-company)
+;;(require 'init-corfu)
 (require 'init-edit)
 ;; (require 'init-bedit)
 (require 'init-vcs)
@@ -51,6 +52,3 @@
 (require 'init-web)
 ;; (require 'init-solidity)
 ;; (require 'init-lua)
-
-;; (require 'init-temp)
-;; (require '
