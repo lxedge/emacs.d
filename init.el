@@ -58,4 +58,12 @@
 
 ;; (require 'init-telega)
 
+;; Fix for COSMIC DE/Wayland: Prevent corfu child frame from stealing focus.
+(with-eval-after-load 'corfu
+  (setq corfu--frame-parameters
+        (append '((no-accept-focus . t)
+                  (no-focus-on-map . t)
+                  (skip-taskbar . t))
+                corfu--frame-parameters)))
+
 ;;; init.el ends here
