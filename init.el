@@ -44,8 +44,6 @@
 (require 'init-yaml)
 (require 'init-just)
 ;; (require 'init-kdl)
-;; (require 'init-llm)
-;; (require 'init-copilot)
 
 (require 'init-clojure)
 (require 'init-elixir)
@@ -57,3 +55,7 @@
 (require 'init-cpp)
 ;; (require 'init-solidity)
 ;; (require 'init-lua)
+
+(require 'init-claude)
+;; (require 'init-llm)
+;; (require 'init-copilot)
