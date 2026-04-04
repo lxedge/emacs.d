@@ -36,5 +36,5 @@
 (global-auto-revert-mode 1)
 
 ;; disable warning from external packages.
-(setq byte-compile-warnings
-      '(not free-vars unresolved callargs obsolete))
+(setq native-comp-async-report-warnings-errors nil)
+(setq warning-minimum-level :error)

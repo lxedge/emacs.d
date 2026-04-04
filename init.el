@@ -25,9 +25,14 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+;; (let ((default-directory (locate-user-emacs-file "lisp/")))
+;;   (normal-top-level-add-to-load-path '("."))
+;;   (normal-top-level-add-subdirs-to-load-path))
+
+(require 'init-font)
 (require 'init-layout)
-(require 'init-terminal)
 (require 'init-theme)
+(require 'init-terminal)
 (require 'init-company)
 ;; (require 'init-corfu)
 (require 'init-edit)
@@ -42,13 +47,13 @@
 ;; (require 'init-llm)
 ;; (require 'init-copilot)
 
-(require 'init-rust)
-(require 'init-cpp)
-(require 'init-golang)
-(require 'init-protobuf)
 (require 'init-clojure)
 (require 'init-elixir)
+(require 'init-golang)
+(require 'init-protobuf)
+(require 'init-rust)
 (require 'init-typescript)
 (require 'init-web)
+(require 'init-cpp)
 ;; (require 'init-solidity)
 ;; (require 'init-lua)
