@@ -50,8 +50,9 @@
                       :underline t :foreground "green"
                       :weight 'bold)
 
-  ;; Enable eglot in go-mode
-  (add-hook 'go-mode-hook 'eglot-ensure)
+  ;; Enable eglot in go-mode (only if gopls is installed)
+  (when (executable-find "gopls")
+    (add-hook 'go-mode-hook 'eglot-ensure))
   ;; Enable company-mode for completion
   (add-hook 'go-mode-hook 'company-mode)
 
