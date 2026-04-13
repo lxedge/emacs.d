@@ -5,10 +5,13 @@
 
 ;;; Code:
 
+(repeat-mode 1)
+
 (straight-use-package 'go-mode)
 (straight-use-package 'go-eldoc)
 (straight-use-package 'eglot)
 (straight-use-package 'company)
+(straight-use-package 'dape)
 
 (defun set-go-env ()
   "Set GOPATH environment variable."
@@ -58,9 +61,20 @@
 
   ;; Key bindings
   (define-key go-mode-map (kbd "C-c C-c") 'compile)
-  (define-key go-mode-map (kbd "C-c C-d") 'eglot-find-declaration)
   (define-key go-mode-map (kbd "C-c C-r") 'eglot-rename)
-  (define-key go-mode-map (kbd "C-c C-f") 'eglot-format-buffer))
+  (define-key go-mode-map (kbd "C-c C-f") 'eglot-format-buffer)
+  (define-key go-mode-map (kbd "C-c C-d") 'eglot-find-declaration)
+  (define-key go-mode-map (kbd "C-c C-i") 'eglot-find-implementation)
+  ;; dape debug keybindings
+  (define-key go-mode-map (kbd "C-c d d") 'dape)
+  (define-key go-mode-map (kbd "C-c d b") 'dape-breakpoint-toggle)
+  (define-key go-mode-map (kbd "C-c d c") 'dape-continue)
+  (define-key go-mode-map (kbd "C-c d n") 'dape-next)
+  (define-key go-mode-map (kbd "C-c d s") 'dape-step-in)
+  (define-key go-mode-map (kbd "C-c d o") 'dape-step-out)
+  (define-key go-mode-map (kbd "C-c d q") 'dape-quit)
+  (define-key go-mode-map (kbd "C-c d r") 'dape-repl)
+  (define-key go-mode-map (kbd "C-c d w") 'dape-dwim))
 
 ;; Configure eglot for Go
 (with-eval-after-load 'eglot
@@ -82,6 +96,47 @@
         company-minimum-prefix-length 1
         company-tooltip-align-annotations t))
 
+
+;; Configure dape for Go debugging (requires dlv in PATH via Nix devShell + direnv)
+(with-eval-after-load 'dape
+  (add-to-list 'dape-configs
+               `(dlv
+                 modes (go-mode)
+                 command "dlv"
+                 command-args ("dap" "--listen" "127.0.0.1::autoport")
+                 command-cwd dape-cwd-fn
+                 host "127.0.0.1"
+                 port :autoport
+                 :type "go"
+                 :request "launch"
+                 :mode "debug"
+                 :program dape-cwd-fn
+                 :env (:CGO_CFLAGS "-U_FORTIFY_SOURCE")))
+  (add-to-list 'dape-configs
+               `(dlv-test
+                 modes (go-mode)
+                 command "dlv"
+                 command-args ("dap" "--listen" "127.0.0.1::autoport")
+                 command-cwd dape-cwd-fn
+                 host "127.0.0.1"
+                 port :autoport
+                 :type "go"
+                 :request "launch"
+                 :mode "test"
+                 :program dape-cwd-fn
+                 :env (:CGO_CFLAGS "-U_FORTIFY_SOURCE")))
+
+  ;; single-key repeat after C-c d <key>
+  (defvar dape-repeat-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "n") #'dape-next)
+      (define-key map (kbd "s") #'dape-step-in)
+      (define-key map (kbd "o") #'dape-step-out)
+      (define-key map (kbd "c") #'dape-continue)
+      (define-key map (kbd "b") #'dape-breakpoint-toggle)
+      (define-key map (kbd "q") #'dape-quit)
+      (define-key map (kbd "r") #'dape-repl)
+      (define-key map (kbd "w") #'dape-dwim))))
 
 
 (provide 'init-golang)
