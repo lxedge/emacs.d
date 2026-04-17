@@ -53,6 +53,8 @@
 (require 'init-typescript)
 (require 'init-web)
 (require 'init-cpp)
+
+(require 'init-move)
 ;; (require 'init-solidity)
 ;; (require 'init-lua)
 
