@@ -40,6 +40,15 @@
               (select-frame frame)
               (mac-auto-operator-composition-mode 1))))
 
+(straight-use-package 'consult)
+(require 'consult)
+
+(global-set-key (kbd "C-c s") 'consult-ripgrep)
+(global-set-key (kbd "C-c f") 'consult-find)
+(global-set-key (kbd "C-c l") 'consult-line)
+(global-set-key (kbd "C-c i") 'consult-imenu)
+(global-set-key (kbd "M-g M-g") 'consult-goto-line)
+
 (provide 'init-edit)
 
 ;;; init-edit.el ends here

@@ -19,6 +19,22 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(eval-when-compile (require 'cl-lib))
+(require 'cl-lib)
+;; 1. 强制修复 decf 宏定义
+(defmacro decf (var &optional delta)
+  `(cl-decf ,var ,delta))
+;; 2. 适配最新版 Consult 的函数重写 (支持 3 个参数)
+(with-eval-after-load 'consult
+  (defun consult--point-placement (selected &optional _arg1 _arg2)
+    "Extract point placement from SELECTED candidate.
+Adapts to different Consult versions by accepting optional arguments."
+    (let ((pos (get-text-property 0 'consult-location selected)))
+      (cond
+       ((integerp pos) pos)
+       ((consp pos) (car pos))
+       (t nil)))))
+
 (straight-use-package 'package)
 (straight-use-package 'external-completion)
 (straight-use-package 'project)
