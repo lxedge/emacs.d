@@ -35,6 +35,8 @@ Adapts to different Consult versions by accepting optional arguments."
        ((consp pos) (car pos))
        (t nil)))))
 
+(straight-use-package
+ '(transient :type git :host github :repo "magit/transient"))
 (straight-use-package 'package)
 (straight-use-package 'external-completion)
 (straight-use-package 'project)
