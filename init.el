@@ -73,7 +73,7 @@ Adapts to different Consult versions by accepting optional arguments."
 (require 'init-cpp)
 
 (require 'init-move)
-;; (require 'init-solidity)
+(require 'init-solidity)
 ;; (require 'init-lua)
 
 (require 'init-claude)
