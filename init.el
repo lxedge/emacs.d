@@ -61,7 +61,7 @@ Adapts to different Consult versions by accepting optional arguments."
 (require 'init-nix)
 (require 'init-yaml)
 (require 'init-just)
-;; (require 'init-kdl)
+(require 'init-kdl)
 
 (require 'init-clojure)
 (require 'init-elixir)
